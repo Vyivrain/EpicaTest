@@ -13,13 +13,12 @@ $(document).ready ->
     i = parseInt(s.match(/\d/g).join(''), 10)
 
     $(this).closest('form').find('.amount').append(
-      '<div class="form-group form-row-width row">' +
+      '<div class="form-group top-margin form-row-width row">' +
         '<label class="control-label col-xs-2 label-margin" for="line_item_' + i.toString() + '">Amount_' + (i + 1).toString() + '</label>' +
-        '<input class="form-control col-md-10" type="text" name="line_item[' + i.toString() + ']">' +
+        '<input class="values form-control col-md-10" type="text" name="line_item[' + i.toString() + ']">' +
         '<button type="button" class="btn btn-primary remove-amount"><i class="glyphicon glyphicon-minus"></i></button>'
       '</div>'
     )
 
     $('.remove-amount').click ->
       $(this).closest('.row').remove()
-

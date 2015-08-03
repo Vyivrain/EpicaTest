@@ -10,8 +10,6 @@ class PurchasesController < ApplicationController
   end
 
   def create
-    binding.pry
-    p '2'
     purchase = Purchase.new(name: params[:purchase][:name], user_id: current_user.id)
 
     LoadLineItems.new(purchase: purchase, line_items: params[:line_item]).load_line_items

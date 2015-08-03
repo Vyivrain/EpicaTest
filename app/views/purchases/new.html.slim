@@ -21,7 +21,7 @@ nav.navbar.navbar-default
   div.amount
     div.form-group.form-row-width.row
       label.control-label.col-xs-2.label-margin for="line_item_0" Amount_1
-      input.form-control.col-md-10 type="text" name="line_item[0]" id="line_item_0"
+      input.values.form-control.col-md-10 type="text" name="line_item[0]" id="line_item_0"
 
   div.row
     button.add-amount.btn.btn-primary.col-sm-offset-3 type="button"
@@ -29,4 +29,6 @@ nav.navbar.navbar-default
 
   br
   br
+  h4.total-amount Total amount:
+
   = f.button :submit, 'Save'
