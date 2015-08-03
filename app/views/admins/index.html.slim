@@ -1,0 +1,60 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Purchases manager', root_path, class: 'navbar-brand'
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to 'Admin', admins_path
+
+table.table.table-striped
+  thead
+    tr
+      th List of users
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.email
+
+
+table.table.table-striped
+  thead
+    tr
+      th List of purchases
+  tbody
+    - @purchases.each do |purchase|
+      tr
+        td = purchase.name
+
+table.table.table-striped
+  thead
+    tr
+      th List of users with negative amount not more than year ago
+  tbody
+    - @users_with_negative.each do |user|
+      tr
+        td = user.email
+
+table.table.table-striped
+  thead
+    tr
+      th List of users with negative amount more than 0.3
+  tbody
+    - @users_with_negative_greater.each do |user|
+      tr
+        td = user.email
+
+table.table.table-striped
+  thead
+    tr
+      th Combined two conditions above
+  tbody
+    - @combine_users.each do |user|
+      tr
+        td = user.email

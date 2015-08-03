@@ -1,0 +1,32 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      button.navbar-toggle.collapsed[type="button" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"]
+        span.sr-only
+          | Toggle navigation
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to 'Purchases manager', root_path, class: 'navbar-brand'
+    #navbar.navbar-collapse.collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to 'Admin', admins_path
+
+= simple_form_for @purchase, html: { class: 'form-inline' } do |f|
+  div.row
+    = f.input :name, label: "#{@time}", label_html: { class: 'col-md-5' }, input_html: { class: 'col-md-10' }, wrap_with: { class: 'form-row-width' }
+  br
+  br
+  div.amount
+    div.form-group.form-row-width.row
+      label.control-label.col-xs-2.label-margin for="line_item_0" Amount_1
+      input.form-control.col-md-10 type="text" name="line_item[0]" id="line_item_0"
+
+  div.row
+    button.add-amount.btn.btn-primary.col-sm-offset-3 type="button"
+      i.glyphicon.glyphicon-plus
+
+  br
+  br
+  = f.button :submit, 'Save'
